@@ -18,7 +18,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    print(f'message received {message}')
     if message.author == client.user:
         return
 
@@ -33,8 +32,10 @@ async def on_message(message):
                 lang = l
                 break
 
-
-        await message.channel.send('```' + lang + r.text[:1998] + '```')
+        if len(r.text) != 0:
+            await message.channel.send('```' + lang + r.text[:1998] + '```')
+        else:
+            await message.channel.send('SORRY. NOT FOUND')
 
 
 
