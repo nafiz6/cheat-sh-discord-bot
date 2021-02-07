@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
 
 client = discord.Client()
 
@@ -22,8 +21,9 @@ async def on_message(message):
         return
 
     if '-cs' in message.content[:3]:
+        print(f'REQUEST: {message.content}')
         await message.channel.send('I AM NOT READY YET')
-        r = requests.get('https://cheat.sh/' + message.content[4:])
+        r = requests.get('https://cheat.sh/' + message.content[4:].replace(' ', '+') + '?TQ')
         print(f'RESPONSE: {r.text}')
 
         await message.channel.send(r.text[:1998])
