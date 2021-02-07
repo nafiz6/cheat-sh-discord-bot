@@ -29,6 +29,7 @@ async def on_message(message):
         lang = ''
         for l in colorschemes:
             if l in message.content:
+                print(f'language: {l}')
                 lang = l
                 break
 
