@@ -10,6 +10,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 client = discord.Client()
 
+colorschemes = ['java', 'c++', 'python', 'js', 'css', 'html', 'assembly']
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -25,8 +27,14 @@ async def on_message(message):
         await message.channel.send('I AM SOMEWHAT READY')
         r = requests.get('https://cheat.sh/' + message.content[4:].replace(' ', '+') + '?TQ')
         print(f'RESPONSE: {r.text}')
+        lang = ''
+        for l in colorschemes:
+            if l in message.content:
+                lang = l
+                break
 
-        await message.channel.send('```' + r.text[:1998] + '```')
+
+        await message.channel.send('```' + lang + r.text[:1998] + '```')
 
 
 
