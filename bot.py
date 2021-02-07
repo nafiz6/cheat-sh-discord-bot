@@ -22,11 +22,11 @@ async def on_message(message):
 
     if '-cs' in message.content[:3]:
         print(f'REQUEST: {message.content}')
-        await message.channel.send('I AM NOT READY YET')
+        await message.channel.send('I AM SOMEWHAT READY')
         r = requests.get('https://cheat.sh/' + message.content[4:].replace(' ', '+') + '?TQ')
         print(f'RESPONSE: {r.text}')
 
-        await message.channel.send(r.text[:1998])
+        await message.channel.send('```' + r.text[:1998] + '```')
 
 
 
