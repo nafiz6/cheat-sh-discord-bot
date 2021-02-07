@@ -34,7 +34,7 @@ async def on_message(message):
                 break
 
         if len(r.text) != 0:
-            await message.channel.send('```' + lang + r.text[:1998] + '```')
+            await message.channel.send('```' + lang + '\n'+ r.text[:1998] + '```')
         else:
             await message.channel.send('SORRY. NOT FOUND')
 
