@@ -39,9 +39,9 @@ async def on_message(message):
 
         if len(r.text) != 0:
             if len(r.text) < 1000:
-                await message.channel.send('```' + lang + '\n'+ resWithText.text[:1998] + '```')
+                await message.channel.send('```' + lang + '\n'+ resWithText.text + '```')
             else:
-                await message.channel.send('```' + lang + '\n'+ r.text[:1998] + '```')
+                await message.channel.send('```' + lang + '\n'+ r.text[:1900] + '```')
             if stackoverflow:
                 match = stackoverflow.group(0)
                 msg = match[6: len(match) - 1]
