@@ -10,5 +10,5 @@ To run
 `python bot.py`
 
 ##TODO
-[ ] - loop and send message in increments due to discord limit
-[ ] - parse stackoverflow links
+[x] - dont send text if message too large
+[x] - parse stackoverflow links
