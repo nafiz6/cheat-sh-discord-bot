@@ -9,6 +9,6 @@ dot-env - `pip install -U python-dotenv`
 To run
 `python bot.py`
 
-##TODO
+## TODO
 [x] - dont send text if message too large
 [x] - parse stackoverflow links
