@@ -1,7 +1,7 @@
-#Cheat-sh
+# Cheat-sh
 Simply curls cheat.sh and returns the message in a discord bot
 
-#REQUIREMENTS
+# REQUIREMENTS
 discord.py - `pip install -U discord.py`
 requests - `python -m pip install requests`
 dot-env - `pip install -U python-dotenv`
